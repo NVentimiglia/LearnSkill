@@ -136,4 +136,3 @@ When implementing new UI features (Charts, Pages):
 | Cursor SQLite locked | Close Cursor IDE first — it will be skipped gracefully if locked |
 
 See [Design.md](Design.md) for architecture and provider path details.
-See [Maintenance.md](Maintenance.md) for testing and fixture information.

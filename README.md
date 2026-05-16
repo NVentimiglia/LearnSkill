@@ -1,7 +1,9 @@
-# learn skill
+# Learn skill
 
 Analyze recent agent sessions for friction, patterns, and rule proposals.
 No external LLM. No API key. The agent running the skill does the analysis.
+
+Pairs well with [SkillMCP](https://github.com/NVentimiglia/SkillMCP) for skill management and [claude-mem](https://github.com/thedotmack/claude-mem) for long-term memory.
 
 ---
 

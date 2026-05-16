@@ -82,7 +82,7 @@ By default, sources are filtered to sessions newer than the last run (via `lean.
 ## 058f9ca1-6ae3-4b52-a341-1ff559841ea6.jsonl (Claude Code)
 
 **Detector output:**
-```
+
 THRASH  \Charts\_VixTermStructureCard.cshtml  (3 edits)
 THRASH  \ViewModels\WeightedSpxAdvanceDeclineViewModel.cs  (3 edits)
 CORRECTIONS  3/10 user turns (30%)
@@ -95,7 +95,7 @@ EXAMPLE  Now do a review of the ViewModel layer.
 ViewModels should transpose the data shapes from the services into a format usab
 EXAMPLE  Can you do another pass of rendering / chart layer.
 I want to make sure that charts can easily be added as componenets 
-```
+
 
 **Observed friction:**
 - "Can you do another pass of rendering / chart layer. I want to make sure that charts can easily be added as componenets" — User had to explicitly ask for a componentization pass after the initial implementation.

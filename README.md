@@ -61,6 +61,71 @@ By default, sources are filtered to sessions newer than the last run (via `lean.
 
 ---
 
+---
+
+## Example Output
+
+#### summary.md
+```
+# Learn Summary
+
+**Run:** 2026-05-16T22:27:00Z
+**Sessions:** 5 (2026-05-16, sources: Claude Code, Antigravity)
+**Signals detected:** Thrashing, Corrections, Manual Audit Requests
+**Proposals written:** doc-pii-audit.md, doc-viewmodel-pattern.md
+```
+
+#### friction.md
+```
+# Friction
+
+## 058f9ca1-6ae3-4b52-a341-1ff559841ea6.jsonl (Claude Code)
+
+**Detector output:**
+```
+THRASH  \Charts\_VixTermStructureCard.cshtml  (3 edits)
+THRASH  \ViewModels\WeightedSpxAdvanceDeclineViewModel.cs  (3 edits)
+CORRECTIONS  3/10 user turns (30%)
+EXAMPLE  compare with these findings:
+Listed directory Pages
+Listed directory Charts
+Viewed Macro.cshtml:1-40
+Viewed Macro.cshtm
+EXAMPLE  Now do a review of the ViewModel layer.
+ViewModels should transpose the data shapes from the services into a format usab
+EXAMPLE  Can you do another pass of rendering / chart layer.
+I want to make sure that charts can easily be added as componenets 
+```
+
+**Observed friction:**
+- "Can you do another pass of rendering / chart layer. I want to make sure that charts can easily be added as componenets" — User had to explicitly ask for a componentization pass after the initial implementation.
+- "Now do a review of the ViewModel layer. ViewModels should transpose the data shapes..." — User providing architectural guidance that should perhaps be in a project rule.
+
+## faefb1d6-e9f9-46ad-8039-b0b0629bcb89 (Antigravity)
+
+**Observed friction:**
+- "Do a audit and review... look for hard coded paths, reference to my name, keys..." — User had to manually request a PII/Path audit before pushing. This suggests a need for an "Audit" ritual or rule.
+- "The final push failed due to a credential mismatch..." — Model tried to push but didn't verify credentials/account first.
+
+## 62ccc10a-a00a-46c9-b596-b2d994111faa (Antigravity)
+
+**Observed friction:**
+- None. Model correctly pivoted from SymbolicLink to Junction on Windows.
+
+```
+
+#### doc-viewmodel-pattern.md
+```
+# ViewModel and Componentization Ritual
+
+When implementing new UI features (Charts, Pages):
+1.  **ViewModel First**: Ensure a clear separation between services and the view. Data should be transposed into a display-ready format in the ViewModel.
+2.  **Componentize**: If a piece of UI is likely to be reused (e.g., a specific chart type), implement it as a partial view or component rather than inlining it.
+3.  **Review Pass**: After initial implementation, perform a "Refactor Pass" specifically looking for opportunities to improve modularity.
+```
+
+---
+
 ## Troubleshooting
 
 | Symptom | Fix |

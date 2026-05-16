@@ -79,7 +79,7 @@ The agent uses Read and Glob directly. No helper script for 5 of 6 providers.
 **Provider: claude-code**
 - Session dir: `~/.claude/projects/{encoded}/`
 - Path encoding: absolute project path, lowercase drive letter, replace `:` `\` `/` with `-`
-  - `D:\Projects\Foo` → `d--Projects-Foo`
+  - `/path/to/project` → `-path-to-project`
 - Files: `*.jsonl`, skip `agent-*.jsonl`
 - Parse each line as JSON, extract `type=user|assistant` messages
 - Skip lines where content is only `tool_result` blocks (no user-visible text)

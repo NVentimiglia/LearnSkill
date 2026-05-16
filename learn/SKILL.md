@@ -43,7 +43,7 @@ Use your Read and Glob tools to collect sessions from each source below.
 Encode the project root path:
 - Lowercase the drive letter
 - Replace `:`, `\`, `/` with `-`
-- Example: `D:\Projects\Foo` → `d--Projects-Foo`
+- Example: `/path/to/project` → `-path-to-project`
 
 Find files: `~/.claude/projects/{encoded}/*.jsonl` — skip `agent-*.jsonl`.
 

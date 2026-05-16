@@ -1,0 +1,14 @@
+{"type":"user","message":{"role":"user","content":[{"type":"text","text":"read src/config.py and explain the database settings"}]},"uuid":"u1","timestamp":"2026-05-15T11:00:00Z"}
+{"type":"assistant","message":{"role":"assistant","content":[{"type":"tool_use","id":"t1","name":"Read","input":{"file_path":"src/config.py"}}]},"uuid":"a1","timestamp":"2026-05-15T11:00:01Z"}
+{"type":"user","message":{"role":"user","content":[{"type":"tool_result","content":"Error: ENOENT: no such file or directory: src/config.py","is_error":true,"tool_use_id":"t1"}]},"uuid":"u2","timestamp":"2026-05-15T11:00:02Z"}
+{"type":"assistant","message":{"role":"assistant","content":[{"type":"tool_use","id":"t2","name":"Read","input":{"file_path":"config.py"}}]},"uuid":"a2","timestamp":"2026-05-15T11:00:03Z"}
+{"type":"user","message":{"role":"user","content":[{"type":"tool_result","content":"Error: ENOENT: no such file or directory: config.py","is_error":true,"tool_use_id":"t2"}]},"uuid":"u3","timestamp":"2026-05-15T11:00:04Z"}
+{"type":"assistant","message":{"role":"assistant","content":[{"type":"tool_use","id":"t3","name":"Read","input":{"file_path":"./config.py"}}]},"uuid":"a3","timestamp":"2026-05-15T11:00:05Z"}
+{"type":"user","message":{"role":"user","content":[{"type":"tool_result","content":"Error: ENOENT: no such file or directory: ./config.py","is_error":true,"tool_use_id":"t3"}]},"uuid":"u4","timestamp":"2026-05-15T11:00:06Z"}
+{"type":"assistant","message":{"role":"assistant","content":[{"type":"tool_use","id":"t4","name":"Read","input":{"file_path":"settings/config.py"}}]},"uuid":"a4","timestamp":"2026-05-15T11:00:07Z"}
+{"type":"user","message":{"role":"user","content":[{"type":"tool_result","content":"Error: ENOENT: no such file or directory: settings/config.py","is_error":true,"tool_use_id":"t4"}]},"uuid":"u5","timestamp":"2026-05-15T11:00:08Z"}
+{"type":"assistant","message":{"role":"assistant","content":[{"type":"text","text":"I can't find config.py. Could you tell me the exact path?"}]},"uuid":"a5","timestamp":"2026-05-15T11:00:09Z"}
+{"type":"user","message":{"role":"user","content":[{"type":"text","text":"it's at app/config.py"}]},"uuid":"u6","timestamp":"2026-05-15T11:01:00Z"}
+{"type":"assistant","message":{"role":"assistant","content":[{"type":"tool_use","id":"t5","name":"Read","input":{"file_path":"app/config.py"}}]},"uuid":"a6","timestamp":"2026-05-15T11:01:01Z"}
+{"type":"user","message":{"role":"user","content":[{"type":"tool_result","content":"DATABASE_URL=postgres://localhost/db\nSECRET_KEY=abc123\nDEBUG=True","tool_use_id":"t5"}]},"uuid":"u7","timestamp":"2026-05-15T11:01:02Z"}
+{"type":"assistant","message":{"role":"assistant","content":[{"type":"text","text":"Found it. The config sets DATABASE_URL pointing to a local postgres instance, a SECRET_KEY, and DEBUG=True (should be False in production)."}]},"uuid":"a7","timestamp":"2026-05-15T11:01:03Z"}

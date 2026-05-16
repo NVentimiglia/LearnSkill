@@ -1,0 +1,12 @@
+{
+  "messages": [
+    {"role": "user", "content": "write unit tests for the auth module"},
+    {"role": "assistant", "content": "Here are unit tests for the auth module using Jest."},
+    {"role": "user", "content": "wrong, we use pytest not Jest. This is a Python project"},
+    {"role": "assistant", "content": "Corrected. Here are pytest tests for the auth module."},
+    {"role": "user", "content": "you missed the token expiry test case"},
+    {"role": "assistant", "content": "Added test_token_expiry covering both valid and expired tokens."},
+    {"role": "user", "content": "also add a test for refresh tokens"},
+    {"role": "assistant", "content": "Added test_refresh_token_valid and test_refresh_token_expired."}
+  ]
+}
